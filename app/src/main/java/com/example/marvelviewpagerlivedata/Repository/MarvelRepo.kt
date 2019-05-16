@@ -1,20 +1,20 @@
 package com.example.marvelviewpagerlivedata.Repository
 
-class MarvelRepo @Inject constructor(private val marvelApi: MarvelApi, private val marvelDB : MarveDB){
+import com.example.marvelviewpagerlivedata.Model.Comic
+import com.example.marvelviewpagerlivedata.toComic
+import javax.inject.Inject
+
+class MarvelRepo @Inject constructor(private val marvelApi: MarvelApi){
 
 
-    fun getSpiderManComics(){
+    suspend fun getSpiderManComics(){
 
         fetchComicsForCharacter("1009610")
     }
 
 
-    private fun fetchComicsForCharacter(characterID : String){
+    private suspend fun fetchComicsForCharacter(characterID : String) : List<Comic>{
 
-
-
-
-
-        return
+        return marvelApi.getCaracterComics(characterID).data.results.map { it.toComic() }
     }
 }

@@ -48,7 +48,7 @@ class ViewModelsTest{
 
     @Test
     fun `Checking passing beer info from api to activity`(){
-        whenever(marvelRepo.getSpiderManComics("1009610")).thenReturn()
+        whenever(marvelRepo.getSpiderManComics()).thenReturn()
         characterComicsViewModelMock.getSpiderManComics()
         characterComicsViewModelMock.beerInfoData.observeForever(beerInfoObserver)
         verify(comicsObserver).onChanged(beerInfoResponse.response.beer.medias.items.map { it.photo })
