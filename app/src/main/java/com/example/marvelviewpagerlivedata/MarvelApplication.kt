@@ -2,6 +2,7 @@ package com.example.marvelviewpagerlivedata
 
 import android.app.Activity
 import android.app.Application
+import com.example.marvelviewpagerlivedata.DI.DaggerAppComponent
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject

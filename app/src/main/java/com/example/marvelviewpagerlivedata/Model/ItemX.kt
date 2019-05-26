@@ -1,5 +1,7 @@
 package com.example.marvelviewpagerlivedata.Model
 
+import com.squareup.moshi.Json
+
 
 data class ItemX(
     @Json(name = "name")

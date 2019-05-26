@@ -21,10 +21,10 @@ interface ComicDao{
     suspend fun deleteComic(comic: Comic)
 
     @Query ("select * from comics where comicId = :id")
-    suspend fun getCmoic(id: Int?): LiveData<Comic>
+     fun getCmoic(id: Int?): LiveData<Comic>
 
     @Query("select * from comics")
-    suspend fun getAllComics() : LiveData<List<Comic>>
+     fun getAllComics() : LiveData<List<Comic>>
 
     @Query("delete from comics")
     suspend fun deleteAllComics()
